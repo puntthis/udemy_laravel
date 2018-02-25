@@ -23,10 +23,10 @@
                         <td>{{$post->id}}</td>
                         <td><img src="{{$post->photo ? $post->photo->file : 'http://placehold.it/400x400'}}" height="50"></td>
                         <td>{{$post->user->name}}</td>
-                        <td>{{$post->category_id}}</td>
+                        <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
                         <td>{{$post->title}}</td>
                         <td>{{$post->body}}</td>
-                        <td>{{$post->created_at->diffForHumans()}} {{$post->created_at->addDays(1)->format('m/d/Y h:i A')}}</td>
+                        <td>{{$post->created_at->diffForHumans()}}</td>
                         <td>{{$post->updated_at->diffForHumans()}}</td>
                     </tr>
                 @endforeach
